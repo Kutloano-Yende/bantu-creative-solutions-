@@ -74,15 +74,15 @@ export default function Contact() {
 
           <div className="relative z-10">
             {/* Header */}
-            <div className="text-center mb-14 md:mb-18">
+            <div className="flex flex-col items-center text-center mb-14 md:mb-18">
               <span className="inline-block text-gold text-[10px] md:text-xs tracking-[0.3em] uppercase font-semibold mb-4">
                 Get In Touch
               </span>
-              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-black leading-tight max-w-4xl mx-auto">
+              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-black leading-tight max-w-4xl text-center">
                 Let&apos;s Build Something{' '}
                 <span className="gold-gradient-text">Meaningful</span> Together
               </h2>
-              <div className="mt-6 gold-divider w-16 mx-auto" />
+              <div className="mt-6 gold-divider w-16" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-start">

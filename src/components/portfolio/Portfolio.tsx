@@ -77,11 +77,19 @@ export default function Portfolio() {
                   className="group"
                 >
                   <div
-                    className="relative p-7 md:p-9 2xl:p-10 rounded-2xl border border-gold/[0.06] bg-cream/50 hover:border-gold/20 cursor-pointer transition-all duration-500 overflow-hidden hover:shadow-md"
-                    onMouseEnter={() => setActiveIndex(i)}
-                    onMouseLeave={() => setActiveIndex(null)}
+                    role="button"
+                    tabIndex={0}
+                    aria-expanded={activeIndex === i}
+                    className="relative p-7 md:p-9 2xl:p-10 rounded-2xl border border-gold/[0.06] bg-cream/50 hover:border-gold/20 cursor-pointer transition-all duration-500 overflow-hidden hover:shadow-md focus:outline-none focus-visible:border-gold/40"
+                    onClick={() => setActiveIndex(activeIndex === i ? null : i)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setActiveIndex(activeIndex === i ? null : i);
+                      }
+                    }}
                   >
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div className="flex flex-row items-center justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-4 mb-2">
                           <span className="text-gold/30 font-[var(--font-heading)] text-sm">
