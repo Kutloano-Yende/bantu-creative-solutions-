@@ -18,11 +18,17 @@
   --font-heading: 'Cinzel', serif;
   --font-body: 'Poppins', sans-serif;
   --font-accent: 'Cormorant Garamond', serif;
+
+  /* Custom breakpoints for large / ultrawide screens */
+  --breakpoint-3xl: 1792px;
+  --breakpoint-4xl: 1920px;
 }
 
+/* Only normalize box-sizing globally. Do NOT reset margin/padding on the
+   universal selector — Tailwind's preflight already zeroes element margins,
+   and a blanket `* { margin: 0 }` overrides every margin utility
+   (mx-auto, mt-*, mb-*…), which broke card centering on large screens. */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
