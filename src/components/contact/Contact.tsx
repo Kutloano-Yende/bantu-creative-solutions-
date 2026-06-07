@@ -3,6 +3,14 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import GoldButton from '@/components/ui/GoldButton';
+import Select from '@/components/ui/Select';
+
+const SERVICE_OPTIONS = [
+  { value: 'Brand Identity Design', label: 'Brand Identity Design' },
+  { value: 'Social Media Design', label: 'Social Media Design' },
+  { value: 'Corporate Documents', label: 'Corporate Documents' },
+  { value: 'Website Design', label: 'Website Design' },
+];
 
 interface FieldErrors {
   name?: string;
@@ -129,19 +137,14 @@ export default function Contact() {
                     <label htmlFor="service" className="block text-charcoal/70 text-xs tracking-[0.15em] uppercase font-semibold">
                       Service Interested In
                     </label>
-                    <div className="relative">
-                      <select id="service" name="service" value={formData.service} onChange={handleChange}
-                        className={`${inputBase} ${inputOk} appearance-none cursor-pointer pr-10`}>
-                        <option value="">Select a service</option>
-                        <option value="Brand Identity Design">Brand Identity Design</option>
-                        <option value="Social Media Design">Social Media Design</option>
-                        <option value="Corporate Documents">Corporate Documents</option>
-                        <option value="Website Design">Website Design</option>
-                      </select>
-                      <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal/25 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                        <path d="M6 9l6 6 6-6" />
-                      </svg>
-                    </div>
+                    <Select
+                      id="service"
+                      name="service"
+                      options={SERVICE_OPTIONS}
+                      value={formData.service}
+                      onChange={(v) => setFormData((prev) => ({ ...prev, service: v }))}
+                      placeholder="Select a service"
+                    />
                   </div>
 
                   <div className="space-y-1.5">
