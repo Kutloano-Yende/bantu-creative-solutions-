@@ -1,15 +1,55 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import GoldParticles from '@/components/ui/GoldParticles';
 import GoldButton from '@/components/ui/GoldButton';
+import ErrorBoundary from '@/components/ui/ErrorBoundary';
 import gsap from 'gsap';
+
+/* Decorative brand logo — used as the fallback while the 3D scene loads,
+   on mobile / reduced-motion, and if WebGL or the model fails. */
+function HeroLogo() {
+  return (
+    <Image
+      src="/images/logo-transparent.png"
+      alt="Bantu Creative Solutions - Unity Symbol"
+      width={400}
+      height={400}
+      className="w-[60%] h-[60%] object-contain relative z-10 drop-shadow-[0_4px_30px_rgba(200,155,60,0.2)]"
+      priority
+    />
+  );
+}
+
+/* The 3D lion is heavy (three.js). Lazy-load it client-side only so it
+   never blocks first paint; show the logo while it streams in. */
+const LionScene = dynamic(() => import('./LionScene'), {
+  ssr: false,
+  loading: () => <HeroLogo />,
+});
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
+  const [use3D, setUse3D] = useState(false);
+
+  // Only render the 3D lion on larger screens with motion enabled. This keeps
+  // three.js off the mobile bundle/critical path and respects accessibility.
+  useEffect(() => {
+    const wide = window.matchMedia('(min-width: 768px)');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => setUse3D(wide.matches && !reduce.matches);
+    update();
+    wide.addEventListener('change', update);
+    reduce.addEventListener('change', update);
+    return () => {
+      wide.removeEventListener('change', update);
+      reduce.removeEventListener('change', update);
+    };
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -135,15 +175,16 @@ export default function Hero() {
               {/* Semi-circle gold accent — like the reference */}
               <div className="absolute top-1/2 right-0 w-[55%] h-[110%] -translate-y-1/2 translate-x-[15%] rounded-full border-2 border-gold/15 opacity-60" />
 
-              {/* Main logo */}
-              <Image
-                src="/images/logo-transparent.png"
-                alt="Bantu Creative Solutions - Unity Symbol"
-                width={400}
-                height={400}
-                className="w-[60%] h-[60%] object-contain relative z-10 drop-shadow-[0_4px_30px_rgba(200,155,60,0.2)]"
-                priority
-              />
+              {/* Centerpiece: 3D gold lion on desktop, brand logo otherwise */}
+              {use3D ? (
+                <div className="absolute inset-0 z-10">
+                  <ErrorBoundary fallback={<HeroLogo />}>
+                    <LionScene />
+                  </ErrorBoundary>
+                </div>
+              ) : (
+                <HeroLogo />
+              )}
 
               {/* Floating accent dots */}
               {[0, 72, 144, 216, 288].map((deg, i) => (
