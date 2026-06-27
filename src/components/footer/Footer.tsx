@@ -41,6 +41,30 @@ export default function Footer() {
               </p>
             </div>
           </div>
+
+          {/* Asset attribution (CC BY 3.0 requires visible credit) */}
+          <div className="mt-8 pt-6 border-t border-white/[0.06] text-center">
+            <p className="text-white/20 text-[10px] tracking-wide">
+              3D lion model by{' '}
+              <a
+                href="https://poly.pizza/m/3XAJojWxSWz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-gold/60 transition-colors"
+              >
+                Poly by Google
+              </a>{' '}
+              · licensed under{' '}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-gold/60 transition-colors"
+              >
+                CC BY 3.0
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

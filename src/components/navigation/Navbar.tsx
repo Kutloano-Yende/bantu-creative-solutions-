@@ -38,7 +38,7 @@ export default function Navbar() {
       >
         <div className={`max-w-[1600px] 4xl:max-w-[2200px] mx-auto transition-all duration-500 ${
           scrolled
-            ? 'bg-ivory/90 backdrop-blur-xl shadow-sm border border-gold/[0.06] rounded-2xl'
+            ? 'bg-[#1A1A1A]/85 backdrop-blur-xl shadow-lg border border-gold/15 rounded-2xl'
             : 'bg-transparent'
         }`}>
           <div className="px-6 md:px-10 flex items-center justify-between h-16 md:h-18">
@@ -51,7 +51,7 @@ export default function Navbar() {
                 className="w-8 h-8 md:w-10 md:h-10 object-contain"
                 priority
               />
-              <span className="font-[var(--font-heading)] text-base md:text-lg text-black tracking-[0.12em] group-hover:text-gold transition-colors duration-300">
+              <span className="font-[var(--font-heading)] text-base md:text-lg text-cream tracking-[0.12em] group-hover:text-gold transition-colors duration-300">
                 BANTU
               </span>
             </a>
@@ -61,7 +61,7 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-charcoal/60 text-[11px] tracking-[0.18em] uppercase font-medium hover:text-gold transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+                  className="text-cream/65 text-[11px] tracking-[0.18em] uppercase font-medium hover:text-gold transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {link.label}
                 </a>
@@ -79,9 +79,9 @@ export default function Navbar() {
               className="lg:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
               aria-label="Toggle menu"
             >
-              <motion.span animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }} className="block w-5 h-px bg-black" />
-              <motion.span animate={menuOpen ? { opacity: 0 } : { opacity: 1 }} className="block w-5 h-px bg-black" />
-              <motion.span animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }} className="block w-5 h-px bg-black" />
+              <motion.span animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }} className="block w-5 h-px bg-cream" />
+              <motion.span animate={menuOpen ? { opacity: 0 } : { opacity: 1 }} className="block w-5 h-px bg-cream" />
+              <motion.span animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }} className="block w-5 h-px bg-cream" />
             </button>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-ivory/98 backdrop-blur-2xl flex items-center justify-center lg:hidden"
+            className="fixed inset-0 z-40 bg-[#0D0D0D]/98 backdrop-blur-2xl flex items-center justify-center lg:hidden"
           >
             <nav className="flex flex-col items-center gap-7">
               <Image src="/images/logo-transparent.png" alt="Bantu" width={64} height={64} className="mb-4 object-contain" />
@@ -105,7 +105,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08, duration: 0.5 }}
-                  className="font-[var(--font-heading)] text-xl text-black tracking-[0.15em] hover:text-gold transition-colors"
+                  className="font-[var(--font-heading)] text-xl text-cream tracking-[0.15em] hover:text-gold transition-colors"
                 >
                   {link.label}
                 </motion.a>

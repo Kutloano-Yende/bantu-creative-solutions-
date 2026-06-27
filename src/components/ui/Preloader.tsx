@@ -29,7 +29,7 @@ export default function Preloader() {
         <motion.div
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="fixed inset-0 z-[10000] bg-cream flex flex-col items-center justify-center"
+          className="fixed inset-0 z-[10000] bg-[#0D0D0D] flex flex-col items-center justify-center"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -45,14 +45,14 @@ export default function Preloader() {
               className="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto mb-4"
               priority
             />
-            <h1 className="font-[var(--font-heading)] text-2xl md:text-3xl text-black tracking-[0.2em] mb-1">
+            <h1 className="font-[var(--font-heading)] text-2xl md:text-3xl text-cream tracking-[0.2em] mb-1">
               BANTU
             </h1>
             <p className="text-gold text-[10px] tracking-[0.4em] uppercase font-semibold mb-12">
               Creative Solutions
             </p>
 
-            <div className="w-48 h-[2px] bg-sand relative overflow-hidden">
+            <div className="w-48 h-[2px] bg-white/10 relative overflow-hidden">
               <motion.div
                 className="absolute left-0 top-0 h-full bg-gold"
                 style={{ width: `${Math.min(progress, 100)}%` }}
@@ -60,7 +60,7 @@ export default function Preloader() {
               />
             </div>
 
-            <p className="text-charcoal/30 text-xs tracking-[0.2em] mt-4 font-mono">
+            <p className="text-cream/30 text-xs tracking-[0.2em] mt-4 font-mono">
               {Math.min(Math.round(progress), 100)}%
             </p>
           </motion.div>

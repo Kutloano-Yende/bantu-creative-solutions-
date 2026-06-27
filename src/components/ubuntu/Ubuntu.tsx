@@ -92,7 +92,7 @@ export default function Ubuntu() {
                 {'WE ARE'.split('').map((char, i) => (
                   <span
                     key={`l2-${i}`}
-                    className="ubuntu-char inline-block text-black"
+                    className="ubuntu-char inline-block text-cream"
                     style={{ transformOrigin: 'bottom' }}
                   >
                     {char === ' ' ? ' ' : char}
@@ -105,7 +105,7 @@ export default function Ubuntu() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-charcoal/55 text-base md:text-lg 2xl:text-xl max-w-3xl mx-auto leading-relaxed font-light font-[var(--font-accent)] italic mb-16"
+              className="text-cream/60 text-base md:text-lg 2xl:text-xl max-w-3xl mx-auto leading-relaxed font-light font-[var(--font-accent)] italic mb-16"
             >
               Ubuntu is more than a word — it is the heartbeat of our work. It means that
               my success is your success. That your growth lifts us all.
@@ -118,17 +118,17 @@ export default function Ubuntu() {
                   initial={{ opacity: 0, y: 40 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
-                  className="group p-7 2xl:p-8 rounded-2xl border border-gold/[0.08] bg-cream/50 hover:border-gold/25 hover:shadow-md transition-all duration-500"
+                  className="group p-7 2xl:p-8 rounded-2xl border border-gold/[0.08] bg-white/[0.03] hover:border-gold/25 hover:shadow-md transition-all duration-500"
                 >
                   <div className="w-11 h-11 rounded-full border-2 border-gold/25 flex items-center justify-center mb-5 mx-auto group-hover:border-gold group-hover:bg-gold/10 transition-all duration-500">
                     <span className="text-gold font-[var(--font-heading)] text-xs font-semibold">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h3 className="font-[var(--font-heading)] text-lg 2xl:text-xl text-black mb-2 group-hover:text-gold-dark transition-colors duration-500">
+                  <h3 className="font-[var(--font-heading)] text-lg 2xl:text-xl text-cream mb-2 group-hover:text-gold-light transition-colors duration-500">
                     {value.name}
                   </h3>
-                  <p className="text-charcoal/45 text-sm 2xl:text-base font-light leading-relaxed">
+                  <p className="text-cream/50 text-sm 2xl:text-base font-light leading-relaxed">
                     {value.principle}
                   </p>
                 </motion.div>

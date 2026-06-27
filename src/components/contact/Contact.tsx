@@ -3,6 +3,14 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import GoldButton from '@/components/ui/GoldButton';
+import Select from '@/components/ui/Select';
+
+const SERVICE_OPTIONS = [
+  { value: 'Brand Identity Design', label: 'Brand Identity Design' },
+  { value: 'Social Media Design', label: 'Social Media Design' },
+  { value: 'Corporate Documents', label: 'Corporate Documents' },
+  { value: 'Website Design', label: 'Website Design' },
+];
 
 interface FieldErrors {
   name?: string;
@@ -50,7 +58,7 @@ export default function Contact() {
     window.open(`https://wa.me/27749761442?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
-  const inputBase = "w-full bg-[#F5F0E6] border text-black py-3.5 px-4 text-sm focus:outline-none transition-colors duration-300 placeholder:text-charcoal/25 rounded-xl";
+  const inputBase = "w-full bg-[#D8CDB2] border text-black py-3.5 px-4 text-sm focus:outline-none transition-colors duration-300 placeholder:text-charcoal/40 rounded-xl";
   const inputOk = "border-sand/60 focus:border-gold";
   const inputErr = "border-red-400 focus:border-red-500";
 
@@ -68,7 +76,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="card-elevated p-8 md:p-14 lg:p-16 relative overflow-hidden"
+          className="card-light p-8 md:p-14 lg:p-16 relative overflow-hidden"
         >
           <div className="gold-arc w-[350px] h-[350px] -bottom-[180px] -left-[120px] opacity-25" />
 
@@ -129,19 +137,14 @@ export default function Contact() {
                     <label htmlFor="service" className="block text-charcoal/70 text-xs tracking-[0.15em] uppercase font-semibold">
                       Service Interested In
                     </label>
-                    <div className="relative">
-                      <select id="service" name="service" value={formData.service} onChange={handleChange}
-                        className={`${inputBase} ${inputOk} appearance-none cursor-pointer pr-10`}>
-                        <option value="">Select a service</option>
-                        <option value="Brand Identity Design">Brand Identity Design</option>
-                        <option value="Social Media Design">Social Media Design</option>
-                        <option value="Corporate Documents">Corporate Documents</option>
-                        <option value="Website Design">Website Design</option>
-                      </select>
-                      <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal/25 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                        <path d="M6 9l6 6 6-6" />
-                      </svg>
-                    </div>
+                    <Select
+                      id="service"
+                      name="service"
+                      options={SERVICE_OPTIONS}
+                      value={formData.service}
+                      onChange={(v) => setFormData((prev) => ({ ...prev, service: v }))}
+                      placeholder="Select a service"
+                    />
                   </div>
 
                   <div className="space-y-1.5">

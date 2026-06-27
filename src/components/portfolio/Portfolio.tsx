@@ -58,10 +58,10 @@ export default function Portfolio() {
               <span className="inline-block text-gold text-[10px] md:text-xs tracking-[0.3em] uppercase font-semibold mb-4">
                 Our Work
               </span>
-              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-black leading-tight">
+              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-cream leading-tight">
                 Selected Projects
               </h2>
-              <p className="mt-5 text-charcoal/60 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
+              <p className="mt-5 text-cream/65 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
                 A showcase of the brands we&apos;ve built and the businesses we&apos;ve empowered.
               </p>
               <div className="mt-6 gold-divider w-16 mx-auto" />
@@ -80,7 +80,7 @@ export default function Portfolio() {
                     role="button"
                     tabIndex={0}
                     aria-expanded={activeIndex === i}
-                    className="relative p-7 md:p-9 2xl:p-10 rounded-2xl border border-gold/[0.06] bg-cream/50 hover:border-gold/20 cursor-pointer transition-all duration-500 overflow-hidden hover:shadow-md focus:outline-none focus-visible:border-gold/40"
+                    className="relative p-7 md:p-9 2xl:p-10 rounded-2xl border border-gold/[0.06] bg-white/[0.03] hover:border-gold/20 cursor-pointer transition-all duration-500 overflow-hidden hover:shadow-md focus:outline-none focus-visible:border-gold/40"
                     onClick={() => setActiveIndex(activeIndex === i ? null : i)}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
@@ -99,7 +99,7 @@ export default function Portfolio() {
                             {project.category}
                           </span>
                         </div>
-                        <h3 className="font-[var(--font-heading)] text-xl md:text-2xl 2xl:text-3xl text-black group-hover:text-gold-dark transition-colors duration-500">
+                        <h3 className="font-[var(--font-heading)] text-xl md:text-2xl 2xl:text-3xl text-cream group-hover:text-gold-light transition-colors duration-500">
                           {project.title}
                         </h3>
                       </div>
@@ -124,7 +124,7 @@ export default function Portfolio() {
                           className="overflow-hidden"
                         >
                           <div className="pt-4">
-                            <p className="text-charcoal/55 text-sm 2xl:text-base font-light leading-relaxed max-w-2xl mb-4">
+                            <p className="text-cream/60 text-sm 2xl:text-base font-light leading-relaxed max-w-2xl mb-4">
                               {project.description}
                             </p>
                             <div className="flex flex-wrap gap-2">

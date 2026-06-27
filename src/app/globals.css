@@ -1,22 +1,25 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Primary Palette */
-  --color-cream: #F5F0E6;
-  --color-ivory: #FAF7F0;
+  /* Primary Palette — Bantu Creative Solutions brand guidelines */
   --color-gold: #C89B3C;
-  --color-gold-dark: #A8792A;
-  --color-black: #111111;
+  --color-gold-light: #E8C06A;
+  --color-gold-dark: #9A7128;
+  --color-black: #000000;
+  --color-offblack: #0D0D0D;
+  --color-nearblack: #1A1A1A;
+  --color-cream: #F5EDD8;
+  --color-ivory: #EAE1CB;
   --color-charcoal: #2B2B2B;
+  --color-grey: #AAAAAA;
   --color-sand: #E8DDC7;
 
   /* Derived */
-  --color-gold-light: rgba(200, 155, 60, 0.12);
   --color-gold-glow: rgba(200, 155, 60, 0.25);
 
   /* Fonts */
   --font-heading: 'Cinzel', serif;
-  --font-body: 'Poppins', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
   --font-accent: 'Cormorant Garamond', serif;
 
   /* Custom breakpoints for large / ultrawide screens */
@@ -34,21 +37,21 @@
 
 html {
   scroll-behavior: smooth;
-  background: #EDE8DC;
+  background: #0D0D0D;
 }
 
 body {
-  background: #EDE8DC;
-  color: #111111;
-  font-family: 'Poppins', sans-serif;
+  background: #0D0D0D;
+  color: #F5EDD8;
+  font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(200, 155, 60, 0.25);
-  color: #111111;
+  background: rgba(200, 155, 60, 0.3);
+  color: #0D0D0D;
 }
 
 ::-webkit-scrollbar {
@@ -56,7 +59,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #EDE8DC;
+  background: #0D0D0D;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -103,23 +106,36 @@ body {
   }
 }
 
-/* Elevated card container — the core UI pattern */
+/* Elevated card container — the core UI pattern. Dark by default to match
+   the brand (near-black surface, gold hairline border). */
 .card-elevated {
-  background: #FAF7F0;
-  border-radius: 24px;
-  box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.04),
-    0 8px 32px rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(200, 155, 60, 0.08);
-}
-
-.card-elevated-dark {
   background: #1A1A1A;
   border-radius: 24px;
   box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.2),
-    0 16px 48px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(200, 155, 60, 0.1);
+    0 1px 3px rgba(0, 0, 0, 0.4),
+    0 24px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(200, 155, 60, 0.14);
+}
+
+/* Deepest surface — used for the CTA + footer to alternate against sections */
+.card-elevated-dark {
+  background: #000000;
+  border-radius: 24px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.5),
+    0 24px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(200, 155, 60, 0.12);
+}
+
+/* Light card — reserved for the few sections kept light for contrast.
+   Muted warm parchment (not bright white) so it doesn't glare on dark. */
+.card-light {
+  background: #E3D9C0;
+  border-radius: 24px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.18),
+    0 16px 48px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(200, 155, 60, 0.18);
 }
 
 /* Decorative gold arc */

@@ -1,15 +1,55 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import GoldParticles from '@/components/ui/GoldParticles';
 import GoldButton from '@/components/ui/GoldButton';
+import ErrorBoundary from '@/components/ui/ErrorBoundary';
 import gsap from 'gsap';
+
+/* Decorative brand logo — used as the fallback while the 3D scene loads,
+   on mobile / reduced-motion, and if WebGL or the model fails. */
+function HeroLogo() {
+  return (
+    <Image
+      src="/images/logo-transparent.png"
+      alt="Bantu Creative Solutions - Unity Symbol"
+      width={400}
+      height={400}
+      className="w-[60%] h-[60%] object-contain relative z-10 drop-shadow-[0_4px_30px_rgba(200,155,60,0.2)]"
+      priority
+    />
+  );
+}
+
+/* The 3D lion is heavy (three.js). Lazy-load it client-side only so it
+   never blocks first paint; show the logo while it streams in. */
+const LionScene = dynamic(() => import('./LionScene'), {
+  ssr: false,
+  loading: () => <HeroLogo />,
+});
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
+  const [use3D, setUse3D] = useState(false);
+
+  // Only render the 3D lion on larger screens with motion enabled. This keeps
+  // three.js off the mobile bundle/critical path and respects accessibility.
+  useEffect(() => {
+    const wide = window.matchMedia('(min-width: 768px)');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => setUse3D(wide.matches && !reduce.matches);
+    update();
+    wide.addEventListener('change', update);
+    reduce.addEventListener('change', update);
+    return () => {
+      wide.removeEventListener('change', update);
+      reduce.removeEventListener('change', update);
+    };
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -41,7 +81,7 @@ export default function Hero() {
       aria-label="Hero"
     >
       {/* Background texture */}
-      <div className="absolute inset-0 bg-[#EDE8DC]" />
+      <div className="absolute inset-0 bg-[#0D0D0D]" />
 
       {/* Large decorative gold arcs */}
       <div className="gold-arc w-[600px] h-[600px] md:w-[900px] md:h-[900px] top-[-200px] right-[-200px] opacity-40" />
@@ -82,11 +122,11 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.7 }}
               className="font-[var(--font-heading)] text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-[1.1] tracking-[0.02em]"
             >
-              <span className="block text-black">Building</span>
+              <span className="block text-cream">Building</span>
               <span className="block gold-gradient-text">Brands.</span>
-              <span className="block text-black">Empowering</span>
+              <span className="block text-cream">Empowering</span>
               <span className="block gold-gradient-text">Businesses.</span>
-              <span className="block text-black">Creating</span>
+              <span className="block text-cream">Creating</span>
               <span className="block gold-gradient-text">Impact.</span>
             </motion.h1>
 
@@ -94,7 +134,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="mt-8 text-charcoal/60 text-sm md:text-base 2xl:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed font-light"
+              className="mt-8 text-cream/65 text-sm md:text-base 2xl:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed font-light"
             >
               A South African creative agency rooted in Ubuntu. We empower
               entrepreneurs, startups, and communities through strategic branding
@@ -135,15 +175,16 @@ export default function Hero() {
               {/* Semi-circle gold accent — like the reference */}
               <div className="absolute top-1/2 right-0 w-[55%] h-[110%] -translate-y-1/2 translate-x-[15%] rounded-full border-2 border-gold/15 opacity-60" />
 
-              {/* Main logo */}
-              <Image
-                src="/images/logo-transparent.png"
-                alt="Bantu Creative Solutions - Unity Symbol"
-                width={400}
-                height={400}
-                className="w-[60%] h-[60%] object-contain relative z-10 drop-shadow-[0_4px_30px_rgba(200,155,60,0.2)]"
-                priority
-              />
+              {/* Centerpiece: 3D gold lion on desktop, brand logo otherwise */}
+              {use3D ? (
+                <div className="absolute inset-0 z-10">
+                  <ErrorBoundary fallback={<HeroLogo />}>
+                    <LionScene />
+                  </ErrorBoundary>
+                </div>
+              ) : (
+                <HeroLogo />
+              )}
 
               {/* Floating accent dots */}
               {[0, 72, 144, 216, 288].map((deg, i) => (
@@ -179,7 +220,7 @@ export default function Hero() {
         transition={{ delay: 2.5, duration: 1 }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
       >
-        <span className="text-charcoal/30 text-[10px] tracking-[0.3em] uppercase">
+        <span className="text-cream/40 text-[10px] tracking-[0.3em] uppercase">
           Scroll
         </span>
         <motion.div

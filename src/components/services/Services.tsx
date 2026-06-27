@@ -82,7 +82,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[0]; index:
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.15 }}
       onMouseMove={handleMouseMove}
-      className="group relative bg-cream/60 rounded-2xl border border-gold/[0.06] hover:border-gold/20 transition-all duration-500 cursor-pointer overflow-hidden hover:shadow-lg flex flex-col"
+      className="group relative bg-white/[0.04] rounded-2xl border border-gold/[0.06] hover:border-gold/20 transition-all duration-500 cursor-pointer overflow-hidden hover:shadow-lg flex flex-col"
     >
       {/* Cursor glow */}
       <div
@@ -98,24 +98,24 @@ function ServiceCard({ service, index }: { service: (typeof services)[0]; index:
           <div className="text-gold/40 group-hover:text-gold transition-colors duration-500">
             {service.icon}
           </div>
-          <span className="font-[var(--font-heading)] text-sand text-3xl 2xl:text-4xl group-hover:text-gold/25 transition-colors duration-500">
+          <span className="font-[var(--font-heading)] text-gold/25 text-3xl 2xl:text-4xl group-hover:text-gold/25 transition-colors duration-500">
             {service.number}
           </span>
         </div>
-        <h3 className="font-[var(--font-heading)] text-lg md:text-xl 2xl:text-2xl text-black mb-3 group-hover:text-gold-dark transition-colors duration-500">
+        <h3 className="font-[var(--font-heading)] text-lg md:text-xl 2xl:text-2xl text-cream mb-3 group-hover:text-gold-light transition-colors duration-500">
           {service.title}
         </h3>
-        <p className="text-charcoal/45 text-sm 2xl:text-base leading-relaxed font-light group-hover:text-charcoal/65 transition-colors duration-500">
+        <p className="text-cream/50 text-sm 2xl:text-base leading-relaxed font-light group-hover:text-cream/65 transition-colors duration-500">
           {service.description}
         </p>
       </div>
 
       {/* Feature list */}
       <div className="relative z-10 px-7 md:px-9 2xl:px-10 pb-7 md:pb-9 2xl:pb-10 mt-auto">
-        <div className="border-t border-sand/60 pt-5">
+        <div className="border-t border-gold/15 pt-5">
           <ul className="grid grid-cols-2 gap-2">
             {service.features.map((f) => (
-              <li key={f} className="flex items-center gap-2 text-charcoal/35 group-hover:text-charcoal/55 transition-colors duration-500">
+              <li key={f} className="flex items-center gap-2 text-cream/45 group-hover:text-cream/60 transition-colors duration-500">
                 <span className="w-1 h-1 rounded-full bg-gold/30 group-hover:bg-gold shrink-0 transition-colors duration-500" />
                 <span className="text-xs 2xl:text-sm">{f}</span>
               </li>
@@ -159,10 +159,10 @@ export default function Services() {
               <span className="inline-block text-gold text-[10px] md:text-xs tracking-[0.3em] uppercase font-semibold mb-4">
                 What We Do
               </span>
-              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-black leading-tight">
+              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-cream leading-tight">
                 Services That Build Empires
               </h2>
-              <p className="mt-5 text-charcoal/60 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
+              <p className="mt-5 text-cream/65 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
                 From brand identity to digital presence, we deliver strategic creative solutions that position your business for growth.
               </p>
               <div className="mt-6 gold-divider w-16 mx-auto" />
