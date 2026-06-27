@@ -83,7 +83,7 @@ function FeatureCard({ feature, index }: { feature: (typeof features)[0]; index:
       transition={{ duration: 0.6, delay: index * 0.1 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative rounded-2xl border border-gold/[0.06] bg-cream/50 hover:border-gold/20 hover:shadow-md transition-all duration-500 flex flex-col text-center"
+      className="group relative rounded-2xl border border-gold/[0.06] bg-white/[0.03] hover:border-gold/20 hover:shadow-md transition-all duration-500 flex flex-col text-center"
     >
       <div className="p-7 2xl:p-8">
         <motion.div
@@ -92,11 +92,11 @@ function FeatureCard({ feature, index }: { feature: (typeof features)[0]; index:
         >
           {feature.icon}
         </motion.div>
-        <h3 className="font-[var(--font-heading)] text-base 2xl:text-lg text-black mb-2 group-hover:text-gold-dark transition-colors duration-500">
+        <h3 className="font-[var(--font-heading)] text-base 2xl:text-lg text-cream mb-2 group-hover:text-gold-light transition-colors duration-500">
           {feature.title}
         </h3>
         <div className="w-6 h-px bg-gold/25 mx-auto mb-3" />
-        <p className="text-charcoal/45 text-sm font-light leading-relaxed">
+        <p className="text-cream/50 text-sm font-light leading-relaxed">
           {feature.detail}
         </p>
       </div>
@@ -131,10 +131,10 @@ export default function WhyChooseUs() {
               <span className="inline-block text-gold text-[10px] md:text-xs tracking-[0.3em] uppercase font-semibold mb-4">
                 Why Us
               </span>
-              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-black leading-tight">
+              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-cream leading-tight">
                 Why Choose Bantu Creative Solutions
               </h2>
-              <p className="mt-5 text-charcoal/60 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
+              <p className="mt-5 text-cream/65 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
                 Six reasons businesses across Africa trust us to build their brands.
               </p>
               <div className="mt-6 gold-divider w-16 mx-auto" />

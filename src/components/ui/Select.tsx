@@ -92,7 +92,7 @@ export default function Select({
         aria-controls={id ? `${id}-listbox` : undefined}
         onClick={() => setOpen((o) => !o)}
         onKeyDown={onKeyDown}
-        className={`w-full bg-[#F5F0E6] border py-3.5 px-4 text-sm rounded-xl flex items-center justify-between gap-2 cursor-pointer transition-colors duration-300 focus:outline-none focus-visible:border-gold ${
+        className={`w-full bg-[#D8CDB2] border py-3.5 px-4 text-sm rounded-xl flex items-center justify-between gap-2 cursor-pointer transition-colors duration-300 focus:outline-none focus-visible:border-gold ${
           open ? 'border-gold' : 'border-sand/60 hover:border-sand'
         } ${className}`}
       >

@@ -42,10 +42,10 @@ export default function Industries() {
               <span className="inline-block text-gold text-[10px] md:text-xs tracking-[0.3em] uppercase font-semibold mb-4">
                 Who We Serve
               </span>
-              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-black leading-tight">
+              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-cream leading-tight">
                 Industries We Empower
               </h2>
-              <p className="mt-5 text-charcoal/60 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
+              <p className="mt-5 text-cream/65 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
                 From startups to government bodies, we create solutions for every sector.
               </p>
               <div className="mt-6 gold-divider w-16 mx-auto" />
@@ -93,10 +93,10 @@ export default function Industries() {
                       >
                         <div className="relative z-10 text-center cursor-pointer">
                           <div className="w-3 h-3 rounded-full bg-gold/40 mx-auto mb-2 group-hover:bg-gold group-hover:shadow-[0_0_12px_rgba(200,155,60,0.4)] transition-all duration-300" />
-                          <span className="block text-charcoal/75 text-xs 2xl:text-sm font-medium group-hover:text-gold-dark transition-colors duration-300 whitespace-nowrap">
+                          <span className="block text-cream/75 text-xs 2xl:text-sm font-medium group-hover:text-gold-light transition-colors duration-300 whitespace-nowrap">
                             {industry.name}
                           </span>
-                          <span className="block text-charcoal/35 text-[10px] 2xl:text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="block text-cream/45 text-[10px] 2xl:text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             {industry.description}
                           </span>
                         </div>
@@ -114,15 +114,15 @@ export default function Industries() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="p-5 rounded-xl border border-gold/[0.06] bg-cream/50 hover:border-gold/20 hover:shadow-sm transition-all duration-500 group"
+                    className="p-5 rounded-xl border border-gold/[0.06] bg-white/[0.03] hover:border-gold/20 hover:shadow-sm transition-all duration-500 group"
                   >
                     <div className="flex items-center gap-3 mb-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-gold/30 group-hover:bg-gold transition-colors" />
-                      <h3 className="text-black text-sm font-medium group-hover:text-gold-dark transition-colors">
+                      <h3 className="text-cream text-sm font-medium group-hover:text-gold-light transition-colors">
                         {industry.name}
                       </h3>
                     </div>
-                    <p className="text-charcoal/45 text-xs pl-5">{industry.description}</p>
+                    <p className="text-cream/50 text-xs pl-5">{industry.description}</p>
                   </motion.div>
                 ))}
               </div>

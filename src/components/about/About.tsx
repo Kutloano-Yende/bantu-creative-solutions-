@@ -88,10 +88,10 @@ export default function About() {
               <span className="inline-block text-gold text-[10px] md:text-xs tracking-[0.3em] uppercase font-semibold mb-4">
                 Who We Are
               </span>
-              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-black leading-tight">
+              <h2 className="font-[var(--font-heading)] text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-cream leading-tight">
                 We Are Not Just Building Businesses
               </h2>
-              <p className="mt-5 text-charcoal/60 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
+              <p className="mt-5 text-cream/65 text-sm md:text-base leading-relaxed font-light max-w-2xl mx-auto">
                 We are building people. We are building communities. We are building a better future.
               </p>
               <div className="mt-6 gold-divider w-16 mx-auto" />
@@ -119,10 +119,10 @@ export default function About() {
                     <span className="font-[var(--font-heading)] text-gold/25 text-5xl 2xl:text-6xl block mb-3">
                       {pillar.number}
                     </span>
-                    <h3 className="font-[var(--font-heading)] text-xl md:text-2xl 2xl:text-3xl text-black mb-3">
+                    <h3 className="font-[var(--font-heading)] text-xl md:text-2xl 2xl:text-3xl text-cream mb-3">
                       {pillar.title}
                     </h3>
-                    <p className="text-charcoal/55 text-sm 2xl:text-base leading-relaxed font-light">
+                    <p className="text-cream/60 text-sm 2xl:text-base leading-relaxed font-light">
                       {pillar.text}
                     </p>
                   </div>

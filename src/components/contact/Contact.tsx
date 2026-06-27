@@ -58,7 +58,7 @@ export default function Contact() {
     window.open(`https://wa.me/27749761442?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
-  const inputBase = "w-full bg-[#F5F0E6] border text-black py-3.5 px-4 text-sm focus:outline-none transition-colors duration-300 placeholder:text-charcoal/25 rounded-xl";
+  const inputBase = "w-full bg-[#D8CDB2] border text-black py-3.5 px-4 text-sm focus:outline-none transition-colors duration-300 placeholder:text-charcoal/40 rounded-xl";
   const inputOk = "border-sand/60 focus:border-gold";
   const inputErr = "border-red-400 focus:border-red-500";
 
@@ -76,7 +76,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="card-elevated p-8 md:p-14 lg:p-16 relative overflow-hidden"
+          className="card-light p-8 md:p-14 lg:p-16 relative overflow-hidden"
         >
           <div className="gold-arc w-[350px] h-[350px] -bottom-[180px] -left-[120px] opacity-25" />
 
