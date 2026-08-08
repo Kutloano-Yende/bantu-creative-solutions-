@@ -88,7 +88,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[0]; index:
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
         style={{
-          background: `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, rgba(200,155,60,0.06), transparent 70%)`,
+          background: `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, rgba(217, 167, 74,0.06), transparent 70%)`,
         }}
       />
 

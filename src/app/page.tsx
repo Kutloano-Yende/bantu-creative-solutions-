@@ -1,22 +1,23 @@
-'use client';
+import Navbar from '@/components/navigation/Navbar';
+import Hero from '@/components/hero/Hero';
+import About from '@/components/about/About';
+import Services from '@/components/services/Services';
+import Process from '@/components/ui/Process';
+import Ubuntu from '@/components/ubuntu/Ubuntu';
+import Community from '@/components/community/Community';
+import Industries from '@/components/industries/Industries';
+import WhyChooseUs from '@/components/why-choose-us/WhyChooseUs';
+import Portfolio from '@/components/portfolio/Portfolio';
+import CallToAction from '@/components/ui/CallToAction';
+import Contact from '@/components/contact/Contact';
+import Footer from '@/components/footer/Footer';
+import CustomCursor from '@/components/ui/CustomCursor';
+import Preloader from '@/components/ui/Preloader';
 
-import dynamic from 'next/dynamic';
-
-const Navbar = dynamic(() => import('@/components/navigation/Navbar'), { ssr: false });
-const Hero = dynamic(() => import('@/components/hero/Hero'), { ssr: false });
-const About = dynamic(() => import('@/components/about/About'), { ssr: false });
-const Services = dynamic(() => import('@/components/services/Services'), { ssr: false });
-const Process = dynamic(() => import('@/components/ui/Process'), { ssr: false });
-const Ubuntu = dynamic(() => import('@/components/ubuntu/Ubuntu'), { ssr: false });
-const Industries = dynamic(() => import('@/components/industries/Industries'), { ssr: false });
-const WhyChooseUs = dynamic(() => import('@/components/why-choose-us/WhyChooseUs'), { ssr: false });
-const Portfolio = dynamic(() => import('@/components/portfolio/Portfolio'), { ssr: false });
-const CallToAction = dynamic(() => import('@/components/ui/CallToAction'), { ssr: false });
-const Contact = dynamic(() => import('@/components/contact/Contact'), { ssr: false });
-const Footer = dynamic(() => import('@/components/footer/Footer'), { ssr: false });
-const CustomCursor = dynamic(() => import('@/components/ui/CustomCursor'), { ssr: false });
-const Preloader = dynamic(() => import('@/components/ui/Preloader'), { ssr: false });
-
+/* Server Component. Sections are Client Components ('use client'), so they are
+   server-rendered then hydrated — real HTML in the initial response (SEO +
+   faster first paint). Only the 3D lion stays client-only (ssr:false), handled
+   inside Hero. */
 export default function Home() {
   return (
     <>
@@ -29,6 +30,7 @@ export default function Home() {
         <Services />
         <Process />
         <Ubuntu />
+        <Community />
         <Industries />
         <WhyChooseUs />
         <Portfolio />

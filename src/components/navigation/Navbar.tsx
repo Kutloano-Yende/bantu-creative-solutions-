@@ -44,7 +44,7 @@ export default function Navbar() {
           <div className="px-6 md:px-10 flex items-center justify-between h-16 md:h-18">
             <a href="#" className="flex items-center gap-2.5 group">
               <Image
-                src="/images/logo-transparent.png"
+                src="/images/logos/BCS_Icon_FullColour_v1.png"
                 alt="Bantu Creative Solutions"
                 width={40}
                 height={40}
@@ -96,7 +96,7 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-[#0D0D0D]/98 backdrop-blur-2xl flex items-center justify-center lg:hidden"
           >
             <nav className="flex flex-col items-center gap-7">
-              <Image src="/images/logo-transparent.png" alt="Bantu" width={64} height={64} className="mb-4 object-contain" />
+              <Image src="/images/logos/BCS_Icon_FullColour_v1.png" alt="Bantu" width={64} height={64} className="mb-4 object-contain" />
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.label}

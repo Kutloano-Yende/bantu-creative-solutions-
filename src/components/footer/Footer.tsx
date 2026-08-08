@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <Image
-                src="/images/logo-gold-black.png"
+                src="/images/logos/BCS_Icon_FullColour_v1.png"
                 alt="Bantu Creative Solutions"
                 width={44}
                 height={44}

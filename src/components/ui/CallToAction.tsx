@@ -24,7 +24,7 @@ export default function CallToAction() {
         >
           {/* African pattern overlay */}
           <div className="absolute inset-0 opacity-[0.04] rounded-3xl" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23C89B3C' stroke-width='0.5'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23C89B3C' stroke-width='0.3'/%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23D9A74A' stroke-width='0.5'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23D9A74A' stroke-width='0.3'/%3E%3C/svg%3E")`,
             backgroundSize: '60px 60px',
           }} />
 
@@ -34,7 +34,7 @@ export default function CallToAction() {
 
           {/* Watermark */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03]">
-            <Image src="/images/watermark.png" alt="" width={400} height={400} className="w-[300px] md:w-[400px] object-contain" aria-hidden="true" />
+            <Image src="/images/logos/BCS_Seal_Full_Cream_v1.png" alt="" width={400} height={400} className="w-[300px] md:w-[400px] object-contain" aria-hidden="true" />
           </div>
 
           <div className="relative z-10 max-w-3xl mx-auto text-center">
@@ -44,7 +44,7 @@ export default function CallToAction() {
               transition={{ duration: 0.6 }}
             >
               <Image
-                src="/images/logo-gold-black.png"
+                src="/images/logos/BCS_Icon_FullColour_v1.png"
                 alt=""
                 width={52}
                 height={52}

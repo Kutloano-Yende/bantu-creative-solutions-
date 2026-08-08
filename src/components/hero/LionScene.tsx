@@ -10,7 +10,7 @@ const MODEL_PATH = '/models/lion.glb';
 /* Brand gold material applied to every mesh so the lion reads as a premium
    gold sculpture regardless of the source model's textures. */
 const GOLD = new THREE.MeshStandardMaterial({
-  color: '#C89B3C',
+  color: '#D9A74A',
   metalness: 0.85,
   roughness: 0.32,
   emissive: '#3a2a0a',
@@ -72,7 +72,7 @@ export default function LionScene() {
         shadow-mapSize={[1024, 1024]}
       />
       <directionalLight position={[-5, 2, -4]} intensity={0.8} color="#cfe0ff" />
-      <pointLight position={[0, -2, 3]} intensity={1.2} color="#C89B3C" />
+      <pointLight position={[0, -2, 3]} intensity={1.2} color="#D9A74A" />
 
       <Suspense fallback={null}>
         <PresentationControls

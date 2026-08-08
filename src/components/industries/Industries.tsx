@@ -65,11 +65,11 @@ export default function Industries() {
                       <path
                         d="M150 20 C130 20 112 30 105 50 C98 70 94 90 90 115 C86 140 82 165 86 185 C90 205 98 220 105 235 C112 250 122 260 135 268 C142 272 150 275 158 272 C166 268 174 260 182 248 C190 236 198 220 202 200 C206 180 204 160 202 140 C200 120 194 100 186 80 C178 60 166 45 158 35 C154 28 152 22 150 20Z"
                         fill="currentColor"
-                        stroke="#C89B3C"
+                        stroke="#D9A74A"
                         strokeWidth="0.5"
                         opacity="0.4"
                       />
-                      <circle cx="150" cy="200" r="6" fill="#C89B3C" opacity="0.8">
+                      <circle cx="150" cy="200" r="6" fill="#D9A74A" opacity="0.8">
                         <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite" />
                         <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
                       </circle>
@@ -92,7 +92,7 @@ export default function Industries() {
                         style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)' }}
                       >
                         <div className="relative z-10 text-center cursor-pointer">
-                          <div className="w-3 h-3 rounded-full bg-gold/40 mx-auto mb-2 group-hover:bg-gold group-hover:shadow-[0_0_12px_rgba(200,155,60,0.4)] transition-all duration-300" />
+                          <div className="w-3 h-3 rounded-full bg-gold/40 mx-auto mb-2 group-hover:bg-gold group-hover:shadow-[0_0_12px_rgba(217, 167, 74,0.4)] transition-all duration-300" />
                           <span className="block text-cream/75 text-xs 2xl:text-sm font-medium group-hover:text-gold-light transition-colors duration-300 whitespace-nowrap">
                             {industry.name}
                           </span>

@@ -81,13 +81,13 @@ export default function GoldParticles({ count = 40 }: { count?: number }) {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, currentSize, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(200, 155, 60, ${currentOpacity})`;
+        ctx.fillStyle = `rgba(217, 167, 74, ${currentOpacity})`;
         ctx.fill();
 
         if (currentSize > 1.5) {
           ctx.beginPath();
           ctx.arc(p.x, p.y, currentSize * 2, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(200, 155, 60, ${currentOpacity * 0.1})`;
+          ctx.fillStyle = `rgba(217, 167, 74, ${currentOpacity * 0.1})`;
           ctx.fill();
         }
       }

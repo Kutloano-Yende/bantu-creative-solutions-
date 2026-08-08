@@ -33,9 +33,9 @@ export default function GoldButton({
 
   const variantStyles = {
     primary:
-      'bg-gold text-white hover:bg-gold-dark shadow-[0_2px_8px_rgba(200,155,60,0.25)] hover:shadow-[0_4px_16px_rgba(200,155,60,0.3)] active:shadow-[0_1px_4px_rgba(200,155,60,0.2)] active:translate-y-[0.5px]',
+      'bg-gold text-white hover:bg-gold-dark shadow-[0_2px_8px_rgba(217, 167, 74,0.25)] hover:shadow-[0_4px_16px_rgba(217, 167, 74,0.3)] active:shadow-[0_1px_4px_rgba(217, 167, 74,0.2)] active:translate-y-[0.5px]',
     outline:
-      'border border-gold/40 text-gold hover:bg-gold hover:text-white hover:border-gold hover:shadow-[0_2px_8px_rgba(200,155,60,0.2)]',
+      'border border-gold/40 text-gold hover:bg-gold hover:text-white hover:border-gold hover:shadow-[0_2px_8px_rgba(217, 167, 74,0.2)]',
     ghost:
       'text-gold hover:bg-gold/10 active:bg-gold/15',
     link:

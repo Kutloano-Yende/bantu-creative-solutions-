@@ -38,7 +38,7 @@ export default function Preloader() {
             className="text-center"
           >
             <Image
-              src="/images/logo-transparent.png"
+              src="/images/logos/BCS_Icon_FullColour_v1.png"
               alt="Bantu Creative Solutions"
               width={80}
               height={80}

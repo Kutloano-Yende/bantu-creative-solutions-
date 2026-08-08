@@ -14,11 +14,11 @@ import gsap from 'gsap';
 function HeroLogo() {
   return (
     <Image
-      src="/images/logo-transparent.png"
+      src="/images/logos/BCS_Icon_FullColour_v1.png"
       alt="Bantu Creative Solutions - Unity Symbol"
       width={400}
       height={400}
-      className="w-[60%] h-[60%] object-contain relative z-10 drop-shadow-[0_4px_30px_rgba(200,155,60,0.2)]"
+      className="w-[60%] h-[60%] object-contain relative z-10 drop-shadow-[0_4px_30px_rgba(217, 167, 74,0.2)]"
       priority
     />
   );
@@ -202,8 +202,8 @@ export default function Hero() {
                   }}
                   className="absolute w-1.5 h-1.5 rounded-full bg-gold/50"
                   style={{
-                    top: `${50 + 48 * Math.sin((deg * Math.PI) / 180)}%`,
-                    left: `${50 + 48 * Math.cos((deg * Math.PI) / 180)}%`,
+                    top: `${(50 + 48 * Math.sin((deg * Math.PI) / 180)).toFixed(3)}%`,
+                    left: `${(50 + 48 * Math.cos((deg * Math.PI) / 180)).toFixed(3)}%`,
                     transform: 'translate(-50%, -50%)',
                   }}
                 />

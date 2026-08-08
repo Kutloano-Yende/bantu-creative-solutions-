@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -110,6 +111,24 @@ export default function Ubuntu() {
               Ubuntu is more than a word — it is the heartbeat of our work. It means that
               my success is your success. That your growth lifts us all.
             </motion.p>
+
+            {/* Hands-together image — the philosophy made visible */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.55 }}
+              className="relative max-w-3xl mx-auto mb-16 rounded-2xl overflow-hidden border border-gold/15"
+            >
+              <Image
+                src="/images/people/px-12431091.jpg"
+                alt="An African community joining hands together in a circle"
+                width={1400}
+                height={900}
+                className="w-full h-56 md:h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gold/[0.06] mix-blend-overlay" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 2xl:gap-6">
               {values.map((value, i) => (

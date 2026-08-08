@@ -79,7 +79,7 @@ export default function About() {
 
           {/* Watermark */}
           <div className="absolute top-8 right-8 opacity-[0.03]">
-            <Image src="/images/watermark.png" alt="" width={200} height={200} className="w-40 md:w-56 object-contain" aria-hidden="true" />
+            <Image src="/images/logos/BCS_Seal_Full_Cream_v1.png" alt="" width={200} height={200} className="w-40 md:w-56 object-contain" aria-hidden="true" />
           </div>
 
           <div className="relative z-10">
