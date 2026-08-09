@@ -5,28 +5,84 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 
 const projects = [
   {
-    title: 'Heritage Brand Identity',
-    category: 'Brand Identity',
-    description: 'Complete brand identity system for an African heritage fashion label — logo, guidelines, stationery, and social media kit.',
-    deliverables: ['Logo Suite', 'Brand Guidelines', 'Stationery Pack', 'Social Media Kit'],
+    title: 'ProSuite — Enterprise Management Suite',
+    url: 'https://www.app.prosuite.co.za/',
+    urlLabel: 'Visit live app',
+    category: 'Enterprise Systems',
+    description: 'Role: Junior Software Developer at Promilezi. Contributing to a live, cloud-based suite of six operational modules — asset, risk, audit, performance, compliance, and document management — including module prototyping with typed domain models ahead of the production build.',
+    deliverables: ['Vue.js', 'Vite', 'TypeScript'],
   },
   {
-    title: 'Community Foundation Profile',
-    category: 'Corporate Documents',
-    description: 'Professional company profile and capability statement for a Johannesburg-based community development NGO.',
-    deliverables: ['Company Profile', 'Capability Statement', 'Pitch Deck'],
+    title: 'ProSuite — Product Website',
+    url: 'https://www.prosuite.co.za/',
+    urlLabel: 'Visit live site',
+    category: 'Product Website',
+    description: 'Role: design and build, freelance (NYK). The public product site for the ProSuite platform — positioning the six modules, the "Why ProSuite?" story, and demo-request conversion paths for prospective clients.',
+    deliverables: ['Vue.js', 'Vite', 'TypeScript'],
   },
   {
-    title: 'Artisan E-Commerce Store',
-    category: 'Website Design',
-    description: 'Full e-commerce website with product photography, SEO setup, and integrated payment for a handcraft artisan collective.',
-    deliverables: ['E-Commerce Website', 'Product Photography', 'SEO Setup', 'Payment Integration'],
+    title: 'HomeReady Finance Solutions',
+    url: 'https://www.homereadyfinance.co.za/',
+    urlLabel: 'Visit live site',
+    category: 'Web Platform',
+    description: 'Role: design and build, freelance (NYK). The live web platform for a credit-readiness company — services, process, FAQ, and WhatsApp conversion paths, presenting a sensitive financial service in plain language.',
+    deliverables: ['React', 'Tailwind CSS', 'Framer Motion'],
   },
   {
-    title: 'Startup Social Campaign',
-    category: 'Social Media',
-    description: 'Month-long social media content strategy and design suite for a tech startup launch across Instagram, Facebook, and LinkedIn.',
-    deliverables: ['Content Strategy', 'Design Suite', 'Ad Creatives', 'Analytics Report'],
+    title: 'Akani BEE Ratings',
+    url: 'https://akanibee.co.za/',
+    urlLabel: 'Visit live site',
+    category: 'Web Platform',
+    description: 'Role: design and build, freelance (NYK). The live platform for a SANAS-accredited, 51% Black-owned B-BBEE ratings consultancy — accreditation-led storytelling with quote-request and WhatsApp conversion paths.',
+    deliverables: ['TypeScript', 'React', 'Tailwind CSS'],
+  },
+  {
+    title: 'Guardian AI — GRC Platform',
+    url: 'https://guardian-ai-cyan.vercel.app/',
+    urlLabel: 'Visit live site',
+    category: 'Governance & Compliance',
+    description: 'Role: personal build. A full governance, risk and compliance platform spanning eleven operational modules — from risk registers and incident tracking to audits, training, and role-based administration.',
+    deliverables: ['React', 'TypeScript', 'Supabase', 'PostgreSQL'],
+  },
+  {
+    title: 'Apparel Co. — E-Commerce Platform',
+    url: 'https://apparel-co-launch.vercel.app/',
+    urlLabel: 'Visit live site',
+    category: 'E-Commerce',
+    description: 'Role: personal build. A complete online store covering the full order lifecycle — checkout, confirmation, tracking, returns, customer accounts, and an admin back office.',
+    deliverables: ['React', 'TypeScript', 'Supabase', 'PostgreSQL'],
+  },
+  {
+    title: 'Fettle Fits — Sportswear E-Commerce',
+    url: 'https://fettlefits.vercel.app/',
+    urlLabel: 'Visit live site',
+    category: 'E-Commerce',
+    description: 'Role: personal build. A premium activewear store for a South African sportswear brand — bold editorial hero, product collection, cart, and account flows built for performance and style.',
+    deliverables: ['React', 'TypeScript', 'Tailwind CSS'],
+  },
+  {
+    title: 'Tembisa Street — Streetwear E-Commerce',
+    url: 'https://tembisa-street-shop.vercel.app/',
+    urlLabel: 'Visit live site',
+    category: 'E-Commerce',
+    description: 'Role: personal build. "From Tembisa to the world" — a modern African streetwear store with a bold editorial hero, shop collection, cart, and account flows.',
+    deliverables: ['React', 'TypeScript', 'Tailwind CSS'],
+  },
+  {
+    title: 'HyperView — Dashboard Platform',
+    url: 'https://github.com/Kutloano-Yende/HyperView',
+    urlLabel: 'View on GitHub',
+    category: 'Dashboards',
+    description: 'Role: personal build. A full-stack operational dashboard platform with a dedicated backend service and drill-down metric views.',
+    deliverables: ['TypeScript', 'Node.js', 'React'],
+  },
+  {
+    title: 'Bantu — Creative Agency Platform',
+    url: 'https://www.bantucreativesolutions.co.za/',
+    urlLabel: 'Visit live site',
+    category: 'Web Platform',
+    description: 'Role: personal build. This site — a South African creative agency rooted in Ubuntu, with a 3D brand centerpiece, editorial gold-on-black storytelling, and start-a-project conversion paths for entrepreneurs and startups.',
+    deliverables: ['Next.js', 'TypeScript', 'Tailwind CSS'],
   },
 ];
 
@@ -137,6 +193,27 @@ export default function Portfolio() {
                                 </span>
                               ))}
                             </div>
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="mt-5 inline-flex items-center gap-2 text-sm text-gold hover:text-gold-light border-b border-gold/30 hover:border-gold pb-0.5 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 rounded-sm"
+                            >
+                              {project.urlLabel}
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                aria-hidden="true"
+                              >
+                                <path d="M6 3h7v7M13 3L4 12" />
+                              </svg>
+                              <span className="sr-only"> (opens in a new tab)</span>
+                            </a>
                           </div>
                         </motion.div>
                       )}
